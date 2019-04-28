@@ -19,6 +19,7 @@ Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 2. 在Docker里创建一个虚拟网段：
 
     ip link set eth0 promisc on 
+    
     docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macnet    
     （其中subnet填写网关所在的网段，gateway填写网关地址） 
 
@@ -36,9 +37,11 @@ Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 5. 输入 crontab -e 编辑crontab内容：
 
     0 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user1>> user1.log 2>&1
+    
     #每天5:00开启user1的学习，并输出日志到 /media/download/pdlearning/user1.log
 
     25 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user2 >> user2.log 2>&1
+    
     #每天5:25开启user2的学习，并输出日志到 /media/download/pdlearning/user2.log
     
     修改user1或user2为你自己标记的用户名，“Ctrl + O”写入修改内容，“Ctrl + X”退出
