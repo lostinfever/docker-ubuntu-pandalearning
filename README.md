@@ -17,10 +17,11 @@ Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 1. 小钢炮系统启用docker功能;
 
 2. 在Docker里创建一个虚拟网段：
-
+```
     ip link set eth0 promisc on 
     
     docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macnet    
+```    
     （其中subnet填写网关所在的网段，gateway填写网关地址） 
 
 3. 下载并启动容器 
