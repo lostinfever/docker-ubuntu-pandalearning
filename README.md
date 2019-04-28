@@ -31,7 +31,7 @@ docker run -it --name ubuntu-pandalearning --restart always --network macnet --i
 （--ip可以指定容器的IP，使用macvlan虚拟网段，容器可以获得一个和宿主机同级的IP，局域网内可以直接访问所有端口，省去端口映射的麻烦）
 ```
 
-**4、SSH登录（root/admin）刚刚创建的ubuntu系统，测试运行Panda-Learning源码是否正常：**
+**4、SSH登录（SSH默认用户名root/admin,端口：22）刚刚创建的ubuntu系统，测试运行Panda-Learning源码是否正常：**
 ```
 cd /media/pdlearning && Python3 -u pandalearning.py
 输入你的强国用户名密码并保存，能显示自己的分数即为正常运行
