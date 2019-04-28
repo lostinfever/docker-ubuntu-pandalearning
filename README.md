@@ -14,37 +14,29 @@ Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 
 使用指南：
 
-* 1. 小钢炮系统启用docker功能;
+* 小钢炮系统启用docker功能;
 
-* 2. 在Docker里创建一个虚拟网段：
+* 在Docker里创建一个虚拟网段：
 ```
-    ip link set eth0 promisc on 
-    
-    docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macnet    
-    
-    （其中subnet填写网关所在的网段，gateway填写网关地址） 
+ip link set eth0 promisc on <br>
+docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macnet    <br>
+（其中subnet填写网关所在的网段，gateway填写网关地址） 
 ```
-* 3. 下载并启动容器 
-
-    docker run -it --name ubuntu-pandalearning --restart always --network macnet --ip 192.168.1.2 lostinfever/aarch64-ubuntu-pandalearning:latest
+* 下载并启动容器 
+docker run -it --name ubuntu-pandalearning --restart always --network macnet --ip 192.168.1.2 lostinfever/aarch64-ubuntu-pandalearning:latest
     
-    （--ip可以指定容器的IP，使用macvlan虚拟网段，容器可以获得一个和宿主机同级的IP，局域网内可以直接访问所有端口，省去端口映射的麻烦）
+（--ip可以指定容器的IP，使用macvlan虚拟网段，容器可以获得一个和宿主机同级的IP，局域网内可以直接访问所有端口，省去端口映射的麻烦）
 
-* 4. SSH登录（root/admin）刚刚创建的ubuntu系统，测试运行Panda-Learning源码是否正常：
+* SSH登录（root/admin）刚刚创建的ubuntu系统，测试运行Panda-Learning源码是否正常：
+cd /media/pdlearning && Python3 -u pandalearning.py
+输入你的强国用户名密码并保存，能显示自己的分数即为正常运行
 
-    cd /media/pdlearning && Python3 -u pandalearning.py
+* 输入 crontab -e 编辑crontab内容：
+0 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user1>> user1.log 2>&1
+#每天5:00开启user1的学习，并输出日志到 /media/download/pdlearning/user1.log
 
-    输入你的强国用户名密码并保存，能显示自己的分数即为正常运行
-
-* 5. 输入 crontab -e 编辑crontab内容：
-
-    0 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user1>> user1.log 2>&1
-    
-    #每天5:00开启user1的学习，并输出日志到 /media/download/pdlearning/user1.log
-
-    25 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user2 >> user2.log 2>&1
-    
-    #每天5:25开启user2的学习，并输出日志到 /media/download/pdlearning/user2.log
+25 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user2 >> user2.log 2>&1
+#每天5:25开启user2的学习，并输出日志到 /media/download/pdlearning/user2.log
     
     修改user1或user2为你自己标记的用户名，“Ctrl + O”写入修改内容，“Ctrl + X”退出
 
