@@ -40,6 +40,7 @@ cd /media/pdlearning && Python3 -u pandalearning.py
 **5、编辑crontab内容：**
 ```
 crontab -e 
+
 0 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user1>> user1.log 2>&1
 #每天5:00开启user1的学习，并输出日志到 /media/download/pdlearning/user1.log
 
