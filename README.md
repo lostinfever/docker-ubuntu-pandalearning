@@ -1,5 +1,5 @@
 ## docker-ubuntu-pandalearning
-A ubuntu image for aarch64 deviecepandalearning
+A ubuntu image for aarch64 deviece to autorun pandalearning
 
 本镜像基于DockerHub提供的官方ubuntu创建，本人只在aarch64架构的斐讯N1设备上运行通过，理论上适用于aarch64架构的其他设备。
 
