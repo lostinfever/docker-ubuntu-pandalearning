@@ -1,4 +1,4 @@
-# docker-ubuntu-pandalearning
+## docker-ubuntu-pandalearning
 A ubuntu image for aarch64 deviecepandalearning
 
 本镜像基于DockerHub提供的官方ubuntu创建，本人只在aarch64架构的斐讯N1设备上运行通过，理论上适用于aarch64架构的其他设备。
@@ -11,6 +11,8 @@ A ubuntu image for aarch64 deviecepandalearning
 通过运行Panda-Learning源码实现XueXiQiangGuo每日自动化刷满25分，通过crontab也可实现多用户运行;
 
 Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
+
+DockerHub页面：https://hub.docker.com/r/lostinfever/arrch64-ubuntu-pandalearning
 
 使用指南：
 
@@ -51,10 +53,10 @@ cd /media/pdlearning && Python3 -u pandalearning.py
 service cron reload && service cron restart
 ``` 
 
-*备注：
+## 备注：
  一般每个任务20分钟左右可以学习完成，由于开启多线程，所以耗费内存较大，单个任务内存消耗在500mb左右；
 有多个用户时，需要每个用户先手动运行保存用户信息，或复制其他平台上的user目录到/media/download/pdlearning/导入以前的用户信息
-多用户最好设置25分钟以上的间隔，避免占用过多内存影响宿主机的运行*
+多用户最好设置25分钟以上的间隔，避免占用过多内存影响宿主机的运行
 
-***免责声明：
-本镜像基于Github上的开源非盈利项目Panda Learning，仅作为程序员之间相互学习交流之用，使用需严格遵守开源许可协议，禁止使用本镜像进行任何盈利活动。对一切非法使用所产生的后果，本人概不负责***
+**免责声明：
+本镜像基于Github上的开源非盈利项目Panda Learning，仅作为程序员之间相互学习交流之用，使用需严格遵守开源许可协议，禁止使用本镜像进行任何盈利活动。对一切非法使用所产生的后果，本人概不负责**
