@@ -8,7 +8,7 @@ A ubuntu image for aarch64 deviece to autorun pandalearning
 测试环境：荒野无灯提供的小钢炮0327系统：https://www.right.com.cn/forum/thread-324404-1-1.html
 
 实现功能：
-通过运行Panda-Learning源码实现XueXiQiangGuo每日自动化刷满25分，通过crontab也可实现多用户运行;
+通过运行Panda-Learning源码实现XueXiQiangGuo每日自动化刷满25分，通过crontab也可实现多用户运行
 
 Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 
