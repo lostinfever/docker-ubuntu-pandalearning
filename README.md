@@ -26,6 +26,7 @@ Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 3. 下载并启动容器 
 
     docker run -it --name ubuntu-pandalearning --restart always --network macnet --ip 192.168.1.2 lostinfever/aarch64-ubuntu-pandalearning:latest
+    
     （--ip可以指定容器的IP，使用macvlan虚拟网段，容器可以获得一个和宿主机同级的IP，局域网内可以直接访问所有端口，省去端口映射的麻烦）
 
 4. SSH登录（root/admin）刚刚创建的ubuntu系统，测试运行Panda-Learning源码是否正常：
