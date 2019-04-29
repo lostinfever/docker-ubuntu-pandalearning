@@ -12,7 +12,7 @@ A ubuntu image for aarch64 deviece to autorun pandalearning
 
 Panda-Learning项目主页：https://github.com/Alivon/Panda-Learning
 
-DockerHub页面：https://hub.docker.com/r/lostinfever/arrch64-ubuntu-pandalearning
+DockerHub页面：https://hub.docker.com/r/lostinfever/aarch64-ubuntu-pandalearning
 
 使用指南：
 
