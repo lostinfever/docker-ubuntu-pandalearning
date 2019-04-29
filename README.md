@@ -41,11 +41,11 @@ cd /media/pdlearning && Python3 -u pandalearning.py
 ```
 crontab -e 
 
-0 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user1>> user1.log 2>&1
+0 5 * * * cd /media/pdlearning/ && python3 -u pandalearning.py user1>> user1.log 2>&1
 #每天5:00开启user1的学习，并输出日志到 /media/download/pdlearning/user1.log
 
-25 5 * * * cd /media/download/pdlearning/ && python3 -u pandalearning.py user2 >> user2.log 2>&1
-#每天5:25开启user2的学习，并输出日志到 /media/download/pdlearning/user2.log
+25 5 * * * cd /media/pdlearning/ && python3 -u pandalearning.py user2 >> user2.log 2>&1
+#每天5:25开启user2的学习，并输出日志到 /media/pdlearning/user2.log
 ```    
 
 修改user1或user2为你自己标记的用户名，“Ctrl + O”写入修改内容，“Ctrl + X”退出
@@ -58,7 +58,7 @@ service cron reload && service cron restart
 ## 备注：
 * 一般每个任务20分钟左右可以学习完成，由于开启多线程，所以耗费内存较大，单个任务内存消耗在400mb左右；
  
-* 有多个用户时，需要每个用户先手动运行保存用户信息，或复制其他平台上的user目录到/media/download/pdlearning/导入以前的用户信息
+* 有多个用户时，需要每个用户先手动运行保存用户信息，或复制其他平台上的user目录到/media/pdlearning/导入以前的用户信息
 
 * 多用户最好设置25分钟以上的间隔，避免占用过多内存影响宿主机的运行
 
