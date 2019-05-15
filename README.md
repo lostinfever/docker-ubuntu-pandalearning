@@ -38,9 +38,10 @@ cd /media/pdlearning && Python3 -u pandalearning.py
 ```
 
 **5、创建自动运行shell脚本：**
-```
+
 /media/pdlearn/pdlearn.sh
 
+```
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
