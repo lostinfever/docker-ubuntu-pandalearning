@@ -37,9 +37,9 @@ cd /media/pdlearning && Python3 -u pandalearning.py
 输入你的强国用户名密码并保存，能显示自己的分数即为正常运行
 ```
 
-**5、创建自动运行shell脚本：**
+**5、创建一个批量学习的shell脚本：**
 
-/media/pdlearn/pdlearn.sh
+/media/pdlearning/pdlearn.sh
 
 ```
 #!/usr/bin/env bash
@@ -47,23 +47,26 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 cd /media/pdlearning/ && 
+#切换到工作目录
 
 sleep $(($RANDOM%600+600)) &&        
 #脚本执行后，随机等待10-20分钟开始执行
 
-./pandalearning-aarch64 user1>> $(date "+%Y%m%d%H%M%S")-user1.log 2>&1 &&
+python3 -u pandalearning.py user1>> $(date "+%Y%m%d%H%M%S")-user1.log 2>&1 &&
 
 sleep $(($RANDOM%600+120)) &&    
 #每个任务运行间隔2-12分钟
 
-./pandalearning-aarch64 user2>> $(date "+%Y%m%d%H%M%S")-user2.log 2>&1 &&
+python3 -u pandalearning.py user2>> $(date "+%Y%m%d%H%M%S")-user2.log 2>&1 &&
 
 sleep $(($RANDOM%600+120)) &&
 
-./pandalearning-aarch64 user3>> $(date "+%Y%m%d%H%M%S")-user3.log 2>&1 &&
+python3 -u pandalearning.py user3>> $(date "+%Y%m%d%H%M%S")-user3.log 2>&1 &&
 ```    
 
-修改user1或user2为你自己标记的用户名，每个任务运行后都会在/media/pdlearning/下生成一个(当前date-名字.log)的日志
+每条命令后加上&&，代表本条命令执行完毕后，再开始执行下一条；否则的话，会一次性运行所有任务，这样内存是不够的；
+
+修改user1或user2为你自己标记的用户名，每个任务运行后都会在/media/pdlearning/下生成一个(当前date-名字.log)的日志；
 
 设置crontab，让shell脚本每天定时开始：
 ``` 
